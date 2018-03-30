@@ -1,0 +1,26 @@
+<div>
+  <p>{{name}}, {{address}}
+    <span style="float:right;text-align:right" class="btn btn-danger">
+      <a routerLink="/customer">Change</a> 
+    </span>
+  </p>
+</div>
+<p>
+  <input type="text" (input)="filter($event.target.value)">
+</p>
+<div class="col-sm-6">
+  <table class="table">
+    <tr *ngFor="let r of selectedData">
+        <td style="width:100%">
+          <div>
+            <h3>{{r.name}}</h3>
+            <p>{{r.location}}</p>
+            <p>{{r.cuisine}}</p>
+            <p>
+              <a [routerLink] ="['../menu',r.id]">Order Food</a>
+            </p>
+          </div>
+        </td>
+    </tr>
+  </table>
+</div>

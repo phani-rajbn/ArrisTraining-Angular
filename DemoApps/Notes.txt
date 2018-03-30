@@ -1,0 +1,18 @@
+Angular Apps are designed to develop SPAs.
+Use Command line Interface for developing Angular Apps. 
+A node module called angular/cli is available in npm which is to be installed.
+npm install -g @angular/cli-->To download the latest angular Cli...
+ng new AppName-->This command is used to create a new Angular Application.
+Move to the created directory to run the Application
+ng serve --open-->It will compile and starts the server which can be accessed from the browser at the specified port no(4200) --open will open the Application in the default browser...
+
+Angular App will have the following units:
+A module
+One or more components:a html, css, testing spec and a ts file
+Classes: to represent real world entities.
+interfaces : to represent raw data..
+services: Functions that are used across the App...
+filters to perform data transformations...
+directives to define the Component customizations
+
+

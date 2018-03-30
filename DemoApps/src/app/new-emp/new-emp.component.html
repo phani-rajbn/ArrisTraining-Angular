@@ -1,0 +1,25 @@
+<div>
+<form name="newEmpForm" #newForm="ngForm" (ngSubmit)='setDetails(newForm.value)'>
+  <fieldset>
+    <legend>New Employee Details</legend>
+  <h1>Add new Details</h1>
+    <p>
+      <input required type="number" #empid = "ngModel" placeholder="Enter ID" [(ngModel)]='valueId' name="empid">
+      <span *ngIf="empid.errors?.required">EmpID is mandatory</span>
+    </p>
+    <p>
+      <input required type="text" #empName = "ngModel" placeholder="Enter Name" [(ngModel)]='valueName' name="empName">
+      <span *ngIf="empName.errors?.required">EmpName is mandatory</span>
+    </p>
+    <p>
+      <input required type="text"  #empAddr = "ngModel" placeholder="Enter Address" [(ngModel)]='valueAddress' name="empAddr">
+      <span *ngIf="empAddr.errors?.required && (empAddr.touched)">EmpAddress is mandatory</span>
+    </p>
+    <p>
+      <button type="submit" [disabled]='!newForm.form.valid'>Add New</button>
+      <button type="reset">Cancel</button>  
+  </p>
+    <p>{{errorMessage}}</p>
+  </fieldset> 
+</form>
+</div>

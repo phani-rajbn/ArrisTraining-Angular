@@ -1,0 +1,25 @@
+<h1>Employee Monitoring System</h1>
+<p>
+  <input type="search" placeholder="Enter the Name to search" name="mySearch" [(ngModel)]='mySearch'>
+</p>
+<div style="display:inline-block; vertical-align: top">
+<table border="1">
+  <tr>
+    <th>Employee ID</th>
+    <th>Employee Name</th>
+    <th>Employee Address</th>
+    <th>Options</th>
+  </tr>
+  <tr *ngFor='let emp of empList | empFilter : mySearch'>
+   <td>{{emp.empID}}</td>
+   <td>{{emp.empName}}</td>
+   <td>{{emp.empAddress}}</td>
+   <td><a href="#" (click)="find(emp.empID)">Edit</a></td>
+  </tr>
+</table>
+</div>
+<app-emp-detail [selectedEmp] = 'selectedEmp'></app-emp-detail>
+<app-new-emp (onSave)="addEmployee($event)"></app-new-emp>
+
+
+

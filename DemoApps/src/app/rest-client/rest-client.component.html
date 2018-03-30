@@ -1,0 +1,28 @@
+<table border="1">
+  <tr>
+    <th>Employee ID</th>
+    <th>Employee Name</th>
+    <th>Employee Address</th>
+    <th>OPtions</th>
+  </tr>
+  <tr *ngFor="let emp of data">
+    <td>{{emp.empId}} </td>
+    <td>{{emp.empName}} </td>
+    <td>{{emp.empAddress}} </td>
+    <td><a href="#" (click)="findEmp(emp)">Edit</a></td>
+  </tr>
+  </table>
+<div *ngIf="selectedEmp">
+  <input type="text" [(ngModel)]="selectedEmp.empId"/>
+  <input type="text" [(ngModel)]="selectedEmp.empName"/>
+  <input type="text" [(ngModel)]="selectedEmp.empAddress"/>
+  <button (click)="saveRec()">Save</button>
+</div>
+
+<div>
+  <h2>Add new Record</h2>
+  <input type="text" [(ngModel)]="newEmp.empId" />
+  <input type="text" [(ngModel)]="newEmp.empName" />
+  <input type="text" [(ngModel)]="newEmp.empAddress" />
+  <button (click)="insertRec()">Save</button>
+</div>
